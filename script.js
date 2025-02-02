@@ -3,7 +3,6 @@ const hint = document.getElementById('hint');
 
 var value, max;
 
-
 function init() {
     [value, max] = getParams();
 
@@ -18,10 +17,12 @@ function getParams() {
 }
 
 function updateContent() {
+    const percent = parseInt((value/max) * 100);
+
     progress.value = value;
     progress.max = max;
 
-    hint.textContent = `${value}/${max}`;
+    hint.textContent = `${percent}%`;
 }
 
 init();
